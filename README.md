@@ -8,12 +8,12 @@
 Use example:
 ```javascript
 ajax ( { url: "getDestinos.php", datos: [{ variable: "var", valor: 1 }],
-    callbackSuccess: exito,
+    callbackOnSuccess: success,
     callbackOnProgress: progress,
     callbackOnError: error,
     method: "get" } );
     
-function exito (respuesta) {
+function success (respuesta) {
     console.log (respuesta);
 }
 
