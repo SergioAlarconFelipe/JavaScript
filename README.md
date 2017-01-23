@@ -57,6 +57,9 @@ createElement ( {
     attr: {
         "id": "idDiv",
         "class": "classDiv"
-    }
+    },
+    children: [
+        createElement ()
+    ]
 } );
 ```
