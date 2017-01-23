@@ -7,12 +7,17 @@
 
 Use example:
 ```javascript
-ajax ( { url: "getDestinos.php",
-    datos: [{ variable: "var", value: 1 }],
+ajax ( { 
+    url: "getDestinos.php",
+    datos: [{
+        variable: "var",
+        value: 1
+        }],
     callbackOnSuccess: success,
     callbackOnProgress: progress,
     callbackOnError: error,
-    method: "get" } );
+    method: "get" 
+    } );
     
 function success (respuesta) {
     console.log (respuesta);
@@ -38,4 +43,19 @@ setCookie ("user", JSON.stringify(user));
 getCookie ("user");
 
 detCookie ("user");
+```
+
+## API Dom
+
+Use example:
+```javascript
+createElement ( {
+    element: "div",
+    text: "Sample",
+    parent: "document.body",
+    attr: {
+        "id": "idDiv",
+        "class": "classDiv"
+        }
+    } );
 ```
