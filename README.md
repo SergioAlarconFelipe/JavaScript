@@ -1,5 +1,7 @@
 # JavaScript Library
 
+ [API Ajax](URL "#api-ajax")
+
 ## API Ajax
 
 Use example:
