@@ -1,10 +1,6 @@
-[API_Ajax]: #api-ajax
-[blogDeJavaScript]: https://unjavascripter.github.io
-
 # JavaScript Library
 
-1. [API Ajax](API_Ajax)
-2. [API Cookies](URL "https://github.com/SergioAlarconFelipe/JavaScript#api-cookies")
+1. [API Ajax](https://github.com/SergioAlarconFelipe/JavaScript#api-ajax)
 
 ## API Ajax
 
