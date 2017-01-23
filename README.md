@@ -10,10 +10,10 @@ Use example:
 ```javascript
 ajax ( { 
     url: "getDestinos.php",
-    datos: [{
+    datos: [ {
         variable: "var",
         value: 1
-    }],
+    } ],
     callbackOnSuccess: success,
     callbackOnProgress: progress,
     callbackOnError: error,
@@ -31,7 +31,7 @@ function progress (e) {
 }
 
 function error () {
-    alert("Error: " + e.target.status);
+    alert ("Error: " + e.target.status);
 }
 ```
 
