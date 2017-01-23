@@ -53,7 +53,7 @@ Use example:
 createElement ( {
     element: "div",
     text: "Sample",
-    parent: "document.body",
+    parent: document.body,
     attr: {
         "id": "idDiv",
         "class": "classDiv"
