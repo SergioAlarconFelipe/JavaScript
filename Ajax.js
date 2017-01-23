@@ -46,7 +46,7 @@ var ajax = (function () {
         objetoAjax.onreadystatechange = function () { //cuando cambie el estado de la peticion
             if (objetoAjax.readyState === 4 && objetoAjax.status === 200) { //estado de la conexión
                 
-                if (param.callbackExitoso !== undefined) param.callbackSuccess (objetoAjax.responseText);
+                if (param.callbackExitoso !== undefined) param.callbackOnSuccess (objetoAjax.responseText);
             } else {
                 //alert("ready state: " + objetoAjax.readyState + " - status: " + objetoAjax.status);
             }
