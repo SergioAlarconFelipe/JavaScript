@@ -24,7 +24,7 @@ function progress (e) {
 }
 
 function error () {
-    alert("Error " + e.target.status + " ocurrido mientras se recibía el documento.");
+    alert("Error: " + e.target.status);
 }
 ```
 
