@@ -1,7 +1,7 @@
 # JavaScript Library
 
-1. [API Ajax](https://github.com/SergioAlarconFelipe/JavaScript#api-ajax)
-2. [API Ajax](#api-cookies)
+1. [API Ajax](#api-ajax)
+2. [API Cookies](#api-cookies)
 
 ## API Ajax
 
