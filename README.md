@@ -2,6 +2,7 @@
 
 1. [API Ajax](#api-ajax)
 2. [API Cookies](#api-cookies)
+3. [API Dom](#api-dom)
 
 ## API Ajax
 
@@ -12,12 +13,12 @@ ajax ( {
     datos: [{
         variable: "var",
         value: 1
-        }],
+    }],
     callbackOnSuccess: success,
     callbackOnProgress: progress,
     callbackOnError: error,
     method: "get" 
-    } );
+} );
     
 function success (respuesta) {
     console.log (respuesta);
@@ -56,6 +57,6 @@ createElement ( {
     attr: {
         "id": "idDiv",
         "class": "classDiv"
-        }
-    } );
+    }
+} );
 ```
