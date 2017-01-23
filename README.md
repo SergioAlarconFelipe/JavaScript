@@ -7,7 +7,8 @@
 
 Use example:
 ```javascript
-ajax ( { url: "getDestinos.php", datos: [{ variable: "var", valor: 1 }],
+ajax ( { url: "getDestinos.php",
+    datos: [{ variable: "var", value: 1 }],
     callbackOnSuccess: success,
     callbackOnProgress: progress,
     callbackOnError: error,
@@ -18,9 +19,9 @@ function success (respuesta) {
 }
 
 function progress (e) {
-    var porcentajeCompleto = (e.position / e.totalSize) * 100;
+    var percent = (e.position / e.totalSize) * 100;
     
-    console.log (porcentajeCompleto + "%");
+    console.log (percent + "%");
 }
 
 function error () {
