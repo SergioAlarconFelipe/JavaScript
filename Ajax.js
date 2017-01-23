@@ -19,12 +19,12 @@ var ajax = (function () {
         if (param.datos !== undefined) {
             for (i = 0; i < param.datos.length; i++) {
                 parametros += (i === 0) ? "?" : "&";
-                parametros += param.datos[i].variable + "=" + param.datos[i].valor;
+                parametros += param.datos[i].variable + "=" + param.datos[i].value;
             }
         }
         
         // Creamos el objeto XMLHttpRequest
-        var objetoAjax = AJAXCrearObjeto(); //crea el objeto XMLHttpRequest dependiendo del navegador
+        var objetoAjax = AJAXCrearObjeto(); 
         
         // Lanzamos la consulta
         if (param.method === undefined) param.method = "get";
@@ -42,7 +42,7 @@ var ajax = (function () {
         // Asignamos la funcion para onprogress
         if (param.callbackOnProgress !== undefined) objetoAjax.onprogress = param.callbackOnProgress;
         
-        // Asignamos la funcion para la peticion completada con exito
+        // Asignamos la funcion para la peticion completada con exito, onsuccess
         objetoAjax.onreadystatechange = function () { //cuando cambie el estado de la peticion
             if (objetoAjax.readyState === 4 && objetoAjax.status === 200) { //estado de la conexión
                 
