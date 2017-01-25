@@ -64,7 +64,7 @@ createElement ( {
             element: "a",
             text: "GitHub",
             attr: {
-                "href": "github.com"
+                "href": "https://github.com"
             }
         }
     ]
