@@ -22,7 +22,8 @@ function createElement(options) {
 	if(options.children) {
 		var length = options.children.length;
 		for(var i = 0; i < length; i++) {
-			element.appendChild(options.children[i]);
+			if(options.children[i] instanceof HTMLElement) element.appendChild(options.children[i]);
+            		else element.appendChild( createElement(options.children[i]) );
 		}
 	}
 	
