@@ -59,7 +59,14 @@ createElement ( {
         "class": "classDiv"
     },
     children: [
-        createElement ()
+        createElement (),
+        { 
+            element: "a",
+            text: "GitHub",
+            attr: {
+                "href": "github.com"
+            }
+        }
     ]
 } );
 ```
