@@ -31,5 +31,17 @@ function createElement(options) {
 		options.parent.appendChild(element);
 	}
 	
+	if(options.style) {
+		for(var style in options.style) {
+			element.style[style] = options.style[style];
+		}
+	}
+
+	if(options.event) {
+		for(var name in options.event) {
+			element.addEventListener(name, options.event[name]);
+		}
+	}
+	
 	return element;
 }
