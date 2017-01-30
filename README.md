@@ -58,6 +58,12 @@ createElement ( {
         "id": "idDiv",
         "class": "classDiv"
     },
+    style: {
+        border: "1px solid black"
+    },
+    event: {
+        click: function () { alert(this); }
+    },
     children: [
         createElement (),
         { 
