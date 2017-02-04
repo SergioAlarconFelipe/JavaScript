@@ -3,6 +3,7 @@
 1. [API Ajax](#api-ajax)
 2. [API Cookies](#api-cookies)
 3. [API Dom](#api-dom)
+3. [API Format](#api-format)
 
 ## API Ajax
 
@@ -75,4 +76,11 @@ createElement ( {
         }
     ]
 } );
+```
+
+## API Format
+
+Use example:
+```javascript
+formatCeros (2, 4); // Return "0002"
 ```
