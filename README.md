@@ -82,5 +82,7 @@ createElement ( {
 
 Use example:
 ```javascript
-formatCeros (2, 4); // Return "0002"
+formatCeros (2, 4); // return "0002"
+
+uppercaseFirstLetter ("hello word!"); return "Hello word!"
 ```
