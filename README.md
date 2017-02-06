@@ -89,11 +89,11 @@ obj = {
     prop3: true
 };
 
-listAllProperties(obj);                 // return ["prop1", "prop2", "prop3"]
+listAllProperties (obj);                 // return ["prop1", "prop2", "prop3"]
 
-obj[listAllProperties(obj)[0]];         // return "a"
-obj[listAllProperties(obj)[1]];         // return "1"
-obj[listAllProperties(obj)[2]];         // return true
+obj[listAllProperties (obj)[0]];         // return "a"
+obj[listAllProperties (obj)[1]];         // return "1"
+obj[listAllProperties (obj)[2]];         // return true
 ```
 
 ## API Format
