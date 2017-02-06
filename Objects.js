@@ -6,5 +6,6 @@ function listAllProperties(o){
       resultado = resultado.concat(Object.getOwnPropertyNames(objetoAInspeccionar)) + "\n";
    }   
 
-   return resultado; 
+   //return resultado; 
+   return resultado.split("\n")[0].split(",");
 }
