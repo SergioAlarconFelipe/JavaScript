@@ -1,4 +1,3 @@
-
 function createElement(options) {
 	options = options || {};
 	
