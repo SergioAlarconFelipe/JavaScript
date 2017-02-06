@@ -89,16 +89,16 @@ obj = {
     prop3: true
 };
 
-listAllProperties(obj);
+listAllProperties(obj);                  // return ["prop1", "prop2", "prop3"]
 
-obj[listAllProperties(obj).split("\n")[0]];
+obj[listAllProperties(obj)[0]];          // return "a"
 ```
 
 ## API Format
 
 Use example:
 ```javascript
-formatCeros (2, 4); // return "0002"
+formatCeros (2, 4);                     // return "0002"
 
-uppercaseFirstLetter ("hello word!"); // return "Hello word!"
+uppercaseFirstLetter ("hello word!");   // return "Hello word!"
 ```
