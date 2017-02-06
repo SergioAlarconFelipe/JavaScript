@@ -7,5 +7,4 @@ function listAllProperties(o){
    }   
 
    return resultado; 
-
 }
