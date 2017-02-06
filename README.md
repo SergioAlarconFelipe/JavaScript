@@ -89,9 +89,9 @@ obj = {
     prop3: true
 };
 
-listaTodasLasPropiedades(obj);
+listAllProperties(obj);
 
-obj[listaTodasLasPropiedades(obj).split("\n")[0]];
+obj[listAllProperties(obj).split("\n")[0]];
 ```
 
 ## API Format
