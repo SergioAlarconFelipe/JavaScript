@@ -1,4 +1,3 @@
-```javascript
 function listaTodasLasPropiedades(o){
    var objetoAInspeccionar;
    var resultado = [];
@@ -10,4 +9,3 @@ function listaTodasLasPropiedades(o){
    return resultado; 
 
 }
-```
