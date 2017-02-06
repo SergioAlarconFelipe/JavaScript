@@ -17,7 +17,7 @@ var ajax = (function () {
         // Cargamos los parametros en la url
         var parametros = "";
         if (param.datos !== undefined) {
-            for (i = 0; i < param.datos.length; i++) {
+            for (var i = 0; i < param.datos.length; i++) {
                 parametros += (i === 0) ? "?" : "&";
                 parametros += param.datos[i].variable + "=" + param.datos[i].value;
             }
@@ -37,7 +37,7 @@ var ajax = (function () {
         }
         
         // Asignamos la funcion para onerror
-        if (param.callbackOnError !== undefined) objetoAjax.onerror = callbackOnError;
+        if (param.callbackOnError !== undefined) objetoAjax.onerror = param.callbackOnError;
         
         // Asignamos la funcion para onprogress
         if (param.callbackOnProgress !== undefined) objetoAjax.onprogress = param.callbackOnProgress;
