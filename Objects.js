@@ -1,4 +1,4 @@
-function listaTodasLasPropiedades(o){
+function listAllProperties(o){
    var objetoAInspeccionar;
    var resultado = [];
 
