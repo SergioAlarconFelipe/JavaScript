@@ -3,6 +3,7 @@
 1. [API Ajax](#api-ajax)
 2. [API Cookies](#api-cookies)
 3. [API Dom](#api-dom)
+4. [Api Objects](#api-objects)
 3. [API Format](#api-format)
 
 ## API Ajax
@@ -76,6 +77,21 @@ createElement ( {
         }
     ]
 } );
+```
+
+## API Objects
+
+Use example:
+```javascript
+obj = {
+    prop1: "a",
+    prop2: "1",
+    prop3: true
+};
+
+listaTodasLasPropiedades(obj);
+
+obj[listaTodasLasPropiedades(obj).split("\n")[0]];
 ```
 
 ## API Format
