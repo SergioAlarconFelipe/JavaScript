@@ -4,7 +4,7 @@
 2. [API Cookies](#api-cookies)
 3. [API Dom](#api-dom)
 4. [Api Objects](#api-objects)
-3. [API Format](#api-format)
+5. [API Format](#api-format)
 
 ## API Ajax
 
