@@ -129,16 +129,25 @@ function createElement(options) {
 }
 
 /* API Objects */
-function listAllProperties(o){
-   var objetoAInspeccionar;
-   var resultado = [];
+function listAllProperties(o, tp = false){
+   if (tp === true) {
+      var objetoAInspeccionar;
+      var resultado = [];
 
-   for(objetoAInspeccionar = o; objetoAInspeccionar !== null; objetoAInspeccionar = Object.getPrototypeOf(objetoAInspeccionar)){
-      resultado = resultado.concat(Object.getOwnPropertyNames(objetoAInspeccionar)) + "\n";
-   }   
+      for(objetoAInspeccionar = o; objetoAInspeccionar !== null; objetoAInspeccionar = Object.getPrototypeOf(objetoAInspeccionar)){
+         resultado = Object.getOwnPropertyNames(objetoAInspeccionar);
+      }   
 
-   //return resultado; 
-   return resultado.split("\n")[0].split(",");
+      Object.keys(obj).forEach(
+         function (p) {
+            resultado.push (p);
+         }
+      );
+
+      return resultado;
+   } else {
+      return Object.keys (o);
+   }
 }
 
 /* API Format */
