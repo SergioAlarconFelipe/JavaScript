@@ -89,41 +89,23 @@ obj = {
     prop3: true
 };
 
-listAllProperties(obj);
-/* output
-["prop1", "prop2", "prop3"]
-*/
+listAllProperties(obj);                 // return   ["prop1", "prop2", "prop3
+listAllProperties(obj, false);          // return   ["prop1", "prop2", "prop3"]
+listAllProperties(obj, true);           // return   ["__defineGetter__", "__defineSetter__", "hasOwnProperty", 
+                                                    "__lookupGetter__", "__lookupSetter__", "propertyIsEnumerable",
+                                                    "constructor", "toString", "toLocaleString", "valueOf", 
+                                                    "isPrototypeOf", "__proto__", "prop1", "prop2", "prop3"]
 
-listAllProperties(obj, false);
-/* output
-["prop1", "prop2", "prop3"]
-*/
-
-listAllProperties(obj, true);
-/* output
-["__defineGetter__", "__defineSetter__", "hasOwnProperty", "__lookupGetter__", "__lookupSetter__", "propertyIsEnumerable",
-"constructor", "toString", "toLocaleString", "valueOf", "isPrototypeOf", "__proto__", "prop1", "prop2", "prop3"]
-*/
-
-obj[listAllProperties (obj)[0]];
-/* output
-"a"
-*/
-obj[listAllProperties (obj)[1]];
-/* output
-"1"
-*/
-obj[listAllProperties (obj)[2]];
-/* output
-true
-*/
+obj[listAllProperties (obj)[0]];        // return   "a"
+obj[listAllProperties (obj)[1]];        // return   "1"
+obj[listAllProperties (obj)[2]];		// return	true
 ```
 
 ## API Format
 
 Use example:
 ```javascript
-formatCeros (2, 4);                     // return "0002"
+formatCeros (2, 4);                     // return 	"0002"
 
-uppercaseFirstLetter ("hello word!");   // return "Hello word!"
+uppercaseFirstLetter ("hello word!");   // return 	"Hello word!"
 ```
