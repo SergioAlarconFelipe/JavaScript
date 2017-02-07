@@ -101,7 +101,8 @@ listAllProperties(obj, false);
 
 listAllProperties(obj, true);
 /* output
-["__defineGetter__", "__defineSetter__", "hasOwnProperty", "__lookupGetter__", "__lookupSetter__", "propertyIsEnumerable", "constructor", "toString", "toLocaleString", "valueOf", "isPrototypeOf", "__proto__", "prop1", "prop2", "prop3"]
+["__defineGetter__", "__defineSetter__", "hasOwnProperty", "__lookupGetter__", "__lookupSetter__", "propertyIsEnumerable",
+"constructor", "toString", "toLocaleString", "valueOf", "isPrototypeOf", "__proto__", "prop1", "prop2", "prop3"]
 */
 
 obj[listAllProperties (obj)[0]];
