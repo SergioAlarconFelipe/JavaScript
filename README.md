@@ -91,10 +91,11 @@ obj = {
 
 listAllProperties(obj);                 // return   ["prop1", "prop2", "prop3
 listAllProperties(obj, false);          // return   ["prop1", "prop2", "prop3"]
-listAllProperties(obj, true);           // return   ["__defineGetter__", "__defineSetter__", "hasOwnProperty", 
-                                        //          "__lookupGetter__", "__lookupSetter__", "propertyIsEnumerable",
-                                        //          "constructor", "toString", "toLocaleString", "valueOf", 
-                                        //          "isPrototypeOf", "__proto__", "prop1", "prop2", "prop3"]
+listAllProperties(obj, true);           // return   ["__defineGetter__", "__defineSetter__", "hasOwnProperty",
+                                        //          "__lookupGetter__", "__lookupSetter__",
+                                        //          "propertyIsEnumerable", "constructor", "toString",
+                                        //          "toLocaleString", "valueOf", "isPrototypeOf",
+                                        //          "__proto__", "prop1", "prop2", "prop3"]
 
 obj[listAllProperties (obj)[0]];        // return   "a"
 obj[listAllProperties (obj)[1]];        // return   "1"
