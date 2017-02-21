@@ -18,8 +18,26 @@ function getCookie (name) {
     return "";
 }
 
+function getAllCookies () {
+    var names = [];
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split('; ');
+    for(var i = 0; i <ca.length; i++) {
+        names.push(ca[i].split("=")[0].trim());
+    }
+    return names;
+}
+
 function delCookie (name) {
     document.cookie = name.trim() + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+}
+
+function delAllCookies () {
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split('; ');
+    for(var i = 0; i <ca.length; i++) {
+        document.cookie = ca[i].split("=")[0].trim() + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    }
 }
 
 function checkCookie (name) {
