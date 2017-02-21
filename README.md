@@ -43,9 +43,13 @@ Use example:
 ```javascript
 setCookie ("user", JSON.stringify(user));
 
-getCookie ("user");
+getCookie ("user");                             // return   user = {}
+                                                // return   ""
 
-detCookie ("user");
+delCookie ("user");
+
+checkCookie ("user");                           // return   true
+                                                // return   false
 ```
 
 ## API Dom
@@ -89,7 +93,7 @@ obj = {
     prop3: true
 };
 
-listAllProperties(obj);                 // return   ["prop1", "prop2", "prop3
+listAllProperties(obj);                 // return   ["prop1", "prop2", "prop3"]
 listAllProperties(obj, false);          // return   ["prop1", "prop2", "prop3"]
 listAllProperties(obj, true);           // return   ["__defineGetter__", "__defineSetter__", "hasOwnProperty",
                                         //          "__lookupGetter__", "__lookupSetter__",
