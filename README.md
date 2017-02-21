@@ -41,15 +41,16 @@ function error () {
 
 Use example:
 ```javascript
-setCookie ("user", JSON.stringify(user));
+cookie.setCookie ("user1", "u1");
+cookie.setCookie ("user2", "u2");
 
-getCookie ("user");                             // return   user = {}
-                                                // return   ""
+cookie.getCookie ("user1");                     // return   u1 || ""
+cookie.getAllCookies ();                        // return   ["user1", "user2"]
 
-delCookie ("user");
+cookie.delCookie ("user1");
+cookie.delAllCookies ();
 
-checkCookie ("user");                           // return   true
-                                                // return   false
+cookie.checkCookie ("user1");                   // return   true || false
 ```
 
 ## API Dom
