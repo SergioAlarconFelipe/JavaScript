@@ -57,11 +57,11 @@ var ajax = (function () {
 
 /* API Cookies */
 function setCookie (name, value) {
-    document.cookie = name + "=" + value + "; path=/";
+    document.cookie = name.trim() + "=" + value + "; path=/";
 }
 
 function getCookie (name) {
-    var name = name + "=";
+    var name = name.trim() + "=";
     var decodedCookie = decodeURIComponent(document.cookie);
     var ca = decodedCookie.split(';');
     for(var i = 0; i <ca.length; i++) {
@@ -77,7 +77,20 @@ function getCookie (name) {
 }
 
 function delCookie (name) {
-    document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    document.cookie = name.trim() + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+}
+
+function checkCookie (name) {
+	var check = false;
+    var name = name.trim() + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        if (ca[i].indexOf(name) === 1) {
+			check = true;
+		}
+    }
+    return check;
 }
 
 /* API Dom */
