@@ -81,16 +81,15 @@ function delCookie (name) {
 }
 
 function checkCookie (name) {
-	var check = false;
     var name = name.trim() + "=";
     var decodedCookie = decodeURIComponent(document.cookie);
     var ca = decodedCookie.split(';');
     for(var i = 0; i <ca.length; i++) {
-        if (ca[i].indexOf(name) === 1) {
-			check = true;
-		}
+        if (ca[i].indexOf(name) !== -1) {
+            return true;
+        }
     }
-    return check;
+    return false;
 }
 
 /* API Dom */
