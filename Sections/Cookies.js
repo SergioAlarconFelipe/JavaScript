@@ -25,9 +25,9 @@ function delCookie (name) {
 function checkCookie (name) {
     var name = name.trim() + "=";
     var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
+    var ca = decodedCookie.split('; ');
     for(var i = 0; i <ca.length; i++) {
-        if (ca[i].indexOf(name) === 0 || ca[i].indexOf(name) === 1) {
+        if (ca[i].indexOf(name) === 0) {
             return true;
         }
     }
