@@ -40,17 +40,17 @@
 		return names;
 	};
 
-    cookie.delCookie = function  (name) {
-        document.cookie = name.trim() + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    };
+	cookie.delCookie = function  (name) {
+		document.cookie = name.trim() + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+	};
 	
 	cookie.delAllCookies = function  () {
-        var decodedCookie = decodeURIComponent(document.cookie);
-        var ca = decodedCookie.split('; ');
-        for(var i = 0; i <ca.length; i++) {
-            document.cookie = ca[i].split("=")[0].trim() + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-        }
-    };
+		var decodedCookie = decodeURIComponent(document.cookie);
+		var ca = decodedCookie.split('; ');
+		for(var i = 0; i <ca.length; i++) {
+			document.cookie = ca[i].split("=")[0].trim() + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+		}
+	};
 
 	cookie.checkCookie = function  (name) {
 		var name = name.trim() + "=";
