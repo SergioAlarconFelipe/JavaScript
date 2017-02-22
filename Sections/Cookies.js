@@ -1,6 +1,7 @@
 var cookie = {
     setCookie: function (name, value) {
         document.cookie = name.trim() + "=" + value + "; path=/";
+        return value;
     },
     
     getCookie: function (name) {
@@ -55,7 +56,7 @@ var cookie = {
     
     prop: function (name, value) {
         if (value) {
-            cookie.setCookie (name, value);    
+            return cookie.setCookie (name, value);    
         } else {
             return cookie.getCookie (name);
         }
