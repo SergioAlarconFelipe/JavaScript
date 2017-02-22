@@ -58,7 +58,9 @@ var ajax = (function () {
 /* API Cookies */
 (function () {
 	function cookie (name, value) {
-		if (value) {
+		if (!name) {
+			return cookie.getAllCookies ();
+		} else if (value) {
 			return cookie.setCookie (name, value);    
 		} else {
 			return cookie.getCookie (name);
@@ -96,17 +98,17 @@ var ajax = (function () {
 		return names;
 	};
 
-    cookie.delCookie = function  (name) {
-        document.cookie = name.trim() + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-    };
+	cookie.delCookie = function  (name) {
+		document.cookie = name.trim() + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+	};
 	
 	cookie.delAllCookies = function  () {
-        var decodedCookie = decodeURIComponent(document.cookie);
-        var ca = decodedCookie.split('; ');
-        for(var i = 0; i <ca.length; i++) {
-            document.cookie = ca[i].split("=")[0].trim() + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-        }
-    };
+		var decodedCookie = decodeURIComponent(document.cookie);
+		var ca = decodedCookie.split('; ');
+		for(var i = 0; i <ca.length; i++) {
+			document.cookie = ca[i].split("=")[0].trim() + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+		}
+	};
 
 	cookie.checkCookie = function  (name) {
 		var name = name.trim() + "=";
@@ -118,6 +120,24 @@ var ajax = (function () {
 			}
 		}
 		return false;
+	};
+	
+	cookie.toObject = function() {
+		var names = cookie.getAllCookies();
+		var obj = {};
+		for(var i = 0; i < names.length; i++) {
+			(function(name) {
+				Object.defineProperty(obj, name, {
+					set: function(value) {
+						return cookie.setCookie(name, value);
+					},
+					get: function() {
+						return cookie.getCookie(name);
+					}
+				});
+			})(names[i]);
+		}
+		return obj;
 	};
 
 	cookie.toString = function () {
