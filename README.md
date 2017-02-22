@@ -53,7 +53,7 @@ cookie.delAllCookies ();
 
 cookie.checkCookie ("user1");                   // return   true || false
 
-cookie + ""                                         // return   "user1, user2"
+cookie + ""                                     // return   "user1, user2"
 cookie.toString()                               // return   "user1, user2"
 ```
 
