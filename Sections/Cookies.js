@@ -51,5 +51,13 @@ var cookie = {
             }
         }
         return false;
+    },
+    
+    prop: function (name, value) {
+        if (value) {
+            cookie.setCookie (name, value);    
+        } else {
+            return cookie.getCookie (name);
+        }
     }
 }
