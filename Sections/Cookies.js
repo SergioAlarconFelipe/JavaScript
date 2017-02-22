@@ -1,6 +1,8 @@
 (function () {
 	function cookie (name, value) {
-		if (value) {
+		if (!name) {
+			return cookie.getAllCookies ();
+		} else if (value) {
 			return cookie.setCookie (name, value);    
 		} else {
 			return cookie.getCookie (name);
