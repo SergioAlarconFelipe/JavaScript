@@ -41,9 +41,10 @@ function error () {
 
 Use example:
 ```javascript
-cookie.setCookie ("user1", "u1");
-cookie.setCookie ("user2", "u2");
+cookie ("user1", "u1");                         // return u1
+cookie.setCookie ("user2", "u2");               // return u2
 
+cookie ("user1");                               // return   u1 || ""
 cookie.getCookie ("user1");                     // return   u1 || ""
 cookie.getAllCookies ();                        // return   ["user1", "user2"]
 
@@ -51,6 +52,9 @@ cookie.delCookie ("user1");
 cookie.delAllCookies ();
 
 cookie.checkCookie ("user1");                   // return   true || false
+
+cookie                                          // return user1, user2
+cookie.toString()                               // return user1, user2
 ```
 
 ## API Dom
