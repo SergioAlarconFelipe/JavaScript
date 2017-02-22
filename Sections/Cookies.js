@@ -63,6 +63,24 @@
 		}
 		return false;
 	};
+	
+	cookie.toObject = function() {
+		var names = cookie.getAllCookies();
+		var obj = {};
+		for(var i = 0; i < names.length; i++) {
+			(function(name) {
+				Object.defineProperty(obj, name, {
+					set: function(value) {
+						return cookie.setCookie(name, value);
+					},
+					get: function() {
+						return cookie.getCookie(name);
+					}
+				});
+			})(names[i]);
+		}
+		return obj;
+	};
 
 	cookie.toString = function () {
 		return document.cookie;
