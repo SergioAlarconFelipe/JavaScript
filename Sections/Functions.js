@@ -29,6 +29,17 @@ function checkNavegador() {
     else if ( !!window.chrome && !!window.chrome.webstore ) return "Chrome";
     else return "Otro";
 }
+/**
+* return array [0] = name navigator, [1] = version navigator
+*/
+function checkBrowser () {
+    var N= navigator.appName, ua= navigator.userAgent, tem;
+    var M= ua.match(/(opera|chrome|safari|firefox|msie)\/?\s*(\.?\d+(\.\d+)*)/i);
+    if(M && (tem= ua.match(/version\/([\.\d]+)/i))!= null) M[2] = tem[1];
+    M= M? [M[1], M[2]]: [N, navigator.appVersion,'-?'];
+    return M;
+};
+
 
 // Funcion para conocer el sistema operativo en uso
 function checkSO() {  
