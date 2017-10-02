@@ -1,14 +1,43 @@
+/**
+* Insert an external script (JS) with code
+* 
+* Example of use: insertScriptExternal( 'propio', 'https://cdn.rawgit.com/SergioAlarconFelipe/JavaScript/master/Sections/Functions.js' );
+* Important note to use this function in github:  
+*       rawgit.com          develop
+*       cdn.rawgit.com      production
+*/
+function insertScriptExternal( id, src ) {
+    ( function( d, s, id, src ) {
+        var js, fjs = d.getElementsByTagName( s )[ 0 ];
+        if ( d.getElementById( id ) ) { 
+            return; 
+        }
+        js = d.createElement( s );
+        js.id = id;
+        js.src = src;
+
+        fjs.parentNode.insertBefore( js, fjs );
+    } ( document, 'script', id, src ) );
+}
+
+/**
+*  Funcion para obtener los parametros de entrada de una funcion
+*  Ejemplo de uso:  function a( a, b, c) { console.log( a + ', ' + b + ', ' + c ); }
+*                   a.getNamesParameters();
+*                   getNamesParameters( a );
+*/
 Function.prototype.getNamesParameters = function() {
     return getNamesParameters(this);
 };
-
 
 var getNamesParameters = (function() {
     var regex_parameters = /\((.*?)\)/;
     var regex_spaces = /\s*/g;
 
     return function(fn) {
-        return regex_parameters.exec(fn.toString())[1].split(",");
+        param = regex_parameters.exec(fn.toString())[1].split(",");
+        
+        return param;
     };
     
 })();
