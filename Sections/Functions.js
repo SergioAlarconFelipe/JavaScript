@@ -51,3 +51,8 @@ function checkSO() {
     else if(navInfo.indexOf('mac') != -1) return 'Macintosh';
     else return "Otro";
 }  
+
+// Funcion para conocer el ancho y alto internos del navegador
+function check_widthXheigth() {
+    alert( window.innerWidth + ' x ' + window.innerHeight );
+}
