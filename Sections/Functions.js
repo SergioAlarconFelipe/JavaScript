@@ -2,8 +2,8 @@
 * Insert an external script (JS) with code
 * 
 * Example of use: 
-*   insertScriptExternal( 'propio', 'https://cdn.rawgit.com/SergioAlarconFelipe/JavaScript/master/Sections/Functions.js' );
-*   insertScriptExternal( 'jquery', 'https://code.jquery.com/jquery-3.2.1.min.js' );
+*   insertExternalScript( 'propio', 'https://cdn.rawgit.com/SergioAlarconFelipe/JavaScript/master/Sections/Functions.js' );
+*   insertExternalScript( 'jquery', 'https://code.jquery.com/jquery-3.2.1.min.js' );
 *
 * Important note to use this function in github:  
 *       rawgit.com          develop
