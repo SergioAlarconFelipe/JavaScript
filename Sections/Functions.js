@@ -9,7 +9,7 @@
 *       rawgit.com          develop
 *       cdn.rawgit.com      production
 */
-function insertScriptExternal( id, src ) {
+function insertExternalScript( id, src ) {
     ( function( d, s, id, src ) {
         var js, fjs = d.getElementsByTagName( s )[ 0 ];
         if ( d.getElementById( id ) ) { 
