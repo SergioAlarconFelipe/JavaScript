@@ -24,6 +24,46 @@ function insertExternalScript( id, src ) {
 }
 
 /**
+* Load a url with POST method
+*/
+function submitAsPost(url) {
+    var bodyTag = document.getElementsByTagName('body')[0];
+    var postForm = document.createElement('form');
+    bodyTag.appendChild(postForm);
+    postForm.method = 'POST';
+
+    var serverAndParams = url.split("?");
+    postForm.action = serverAndParams[0];
+    var params = null;
+    try
+    {
+        var paramsAndHash = serverAndParams[1].split("#");
+        params = paramsAndHash[0]; 
+        var attrList = params.split("&");
+        for (var i = 0; i < attrList.length; i++)
+        {
+            try
+            {
+                var keyValue = attrList[i].split("=");
+                var el = document.createElement('input');
+                el.type="hidden";
+                el.name=keyValue[0];
+                var value = keyValue[1];
+                value = value.replace(/\+/g, ' ');
+                el.value=decodeURIComponent(value);
+                postForm.appendChild(el);
+            }
+            catch(error){}
+        } 
+    }
+    catch(error){}
+
+    postForm.submit();
+    bodyTag.removeChild(postForm);
+}
+
+
+/**
 *  Funcion para obtener los parametros de entrada de una funcion
 *  Ejemplo de uso:  function a( a, b, c) { console.log( a + ', ' + b + ', ' + c ); }
 *                   a.getNamesParameters();
