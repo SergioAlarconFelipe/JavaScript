@@ -19,14 +19,17 @@
     $.fn.loadComponent = 
 		function ( opt ) {
 			// Default opt
+			/*
 			if( typeof( opt ) === 'undefined' ) {
 				opt = {};
 			}
-			/*
-			if( opt.hasOwnProperty( 'tag' ) ) {
-				opt.tag = 'include';
-			}
 			*/
+			
+			var settings = $.extend( {
+				tag: 'include',
+				callback_success: '',
+				callback_args: '' 
+			}, opt );
 			
 			// Funcionalidad
 			cantIncludes = $( this ).length;
@@ -42,7 +45,7 @@
 						$.each( variables, function( index, value ) {					
 							//key = new RegExp( '\\' + index, 'g' );
 							key = new RegExp( '\\' + index + '\\b', 'g' );
-							console.log( key );
+							//console.log( key );
 							res = res.replace( key, value );
 						} );				
 					}
@@ -60,11 +63,11 @@
 					// Ejecucion del callback final tras la carga de todos los includes
 					cantIncludes --;
 					if( cantIncludes === 0 ) {
-						if( opt.callback_success !== undefined ) {
-							if( opt.callback_args !== undefined ) {
-								opt.callback_success( opt.callback_args );
+						if( settings.callback_success !== undefined ) {
+							if( settings.callback_args !== undefined ) {
+								settings.callback_success( settings.callback_args );
 							} else {
-								opt.callback_success( );
+								settings.callback_success( );
 							}
 							
 						}
@@ -72,6 +75,8 @@
 					
 				} );
 			} );
+			
+			return this;
 		}
  
 }( jQuery ));
