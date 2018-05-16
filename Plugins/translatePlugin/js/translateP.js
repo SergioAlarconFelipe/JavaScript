@@ -10,6 +10,7 @@
     $.fn.translate = 
 		function ( opt ) {
 			// Default opt
+			/*
 			if( typeof( opt ) === 'object' ) {
 				if( opt.lang === undefined ) {
 					opt.lang = 'en';
@@ -24,13 +25,19 @@
 					opt.lang = 'en';
 				}
 			}
+			*/
+			var settings = $.extend( {
+				lang: 'en'
+			}, opt );
 			
 			element = this;			
-			$.get( 'locale/' + opt.lang + '.js', function( res ) {				
+			$.get( 'locale/' + settings.lang + '.js', function( res ) {				
 				$( element ).each( function( index, element ) {
 					$( element ).text( translate[ $( element ).attr( 'data-translate' ) ] );
 				} );
 			} );
+			
+			return this;
 		}
- 
+		
 }( jQuery ));
