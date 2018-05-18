@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+		<script src="sql.js"></script>
+	</head>
+	<body>
+		<script>
+		//https://github.com/kripken/sql.js
+		
+		var xhr = new XMLHttpRequest();
+		xhr.withCredentials = 'asdf';
+		xhr.open('GET', 'asdf-clave.db', true);
+		xhr.responseType = 'arraybuffer';
+
+		xhr.onload = function(e) {
+			var uInt8Array = new Uint8Array(this.response);
+			var db = new SQL.Database(uInt8Array);
+			var contents = db.exec("SELECT * FROM asdf");
+			// contents is now [{columns:['col1','col2',...], values:[[first row], [second row], ...]}]
+			console.log( contents );
+		};
+		xhr.send();
+		</script>
+	</body>
+</html>
