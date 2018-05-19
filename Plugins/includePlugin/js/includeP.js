@@ -10,10 +10,12 @@
  *          <li>callback_args: Indicate the arguments to callback_success</li>
  *      </ul>
  * 
+ * @returns this
+ * 
  * Example:
  *      <include variables='"$a":"v1","$b":"v2"' src="general">head</include>
  */
-(function ($) {
+( function( $ ) {
     $.loadComponents = function( opt ) {
         $( 'include' ).loadComponents( opt );
     };
