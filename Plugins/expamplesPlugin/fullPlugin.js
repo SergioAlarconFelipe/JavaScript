@@ -2,7 +2,7 @@
     var methodsPublic = {
         init: function(options) {
             console.log( 'init' );
-            $( this ).data( 'prop', 'val' );
+			$( this ).data( 'prop', 'val' );
         },
         show: function( ) { 
             console.log( 'show' ); 
@@ -29,7 +29,7 @@
             f.call( this, content1, content2 );
         },
         data: function( ) {
-			console.log( 'data' )
+			console.log( 'data' );
             console.log( $( this ).data( 'prop' ) );
         },
     };
@@ -59,8 +59,7 @@
 
     $.plugin = function(methodOrOptions) {
 		var e = $( 'h2' );
-        $( e ).plugin.apply( this, arguments );
-		return e;
+        return $( e ).plugin.apply( e, arguments );
     }
 	
 } )( jQuery );
