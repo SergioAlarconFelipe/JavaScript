@@ -17,7 +17,9 @@
  */
 ( function( $ ) {
     $.loadComponents = function( opt ) {
-        $( 'include' ).loadComponents( opt );
+        var e =  $( 'include' );
+        $( e ).loadComponents( opt );
+        return e;
     };
     
     $.fn.loadComponents =
