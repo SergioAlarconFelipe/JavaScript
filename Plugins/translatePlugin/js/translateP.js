@@ -16,7 +16,8 @@
             // Default opt
             var settings = $.extend( {
                 lang: 'en',
-                path: 'locale'
+                path: 'locale',
+                remove: true
             }, opt );
             
             // Funcionalidad
@@ -24,7 +25,7 @@
             $.get( settings.path + '/' + settings.lang + '.js', function( res ) {
                 $( element ).each( function( index, element ) {
                     $( element ).text(translate[ $( element ).attr( 'data-translate' ) ] );
-                    $( element ).removeAttr( 'data-translate' );
+                    if( settings.remove ) $( element ).removeAttr( 'data-translate' );
                 });
             });
 
