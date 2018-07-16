@@ -19,13 +19,17 @@
  *		
 */
 ( function( $ ){
-	$.fn.regex = function( pattern = null, attr = undefined, target = $.fn.attr ){
+	$.fn.regex = function( pattern = null, attr = undefined ){
 		// Validation
+		var target;
 		if( pattern === null ) return this;
-		if( attr === 'content' ) attr = undefined;
-		if( attr === undefined ) target = undefined;
-		if( attr !== undefined && attr !== 'content' ) attr = [attr];
-		target = target || $.fn.text;
+		if( attr === 'content' || attr === undefined ) {
+			attr = undefined; 
+			target = $.fn.text;
+		} else {
+			target = $.fn.attr;
+			if( attr !== undefined ) attr = [attr];	
+		}
 		
 		// Filter by regex
 		return this.filter( function() {
