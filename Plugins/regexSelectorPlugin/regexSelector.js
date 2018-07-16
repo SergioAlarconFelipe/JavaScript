@@ -19,7 +19,12 @@
  *		
 */
 ( function( $ ){
-	$.fn.regex = function( pattern = null, attr = undefined ){
+	$.fn.r = function( a ) {
+		console.log( $.fn.text( this ) );
+		
+		return this;
+	}
+	$.fn.regex = function( pattern = null, attr = undefined ) {
 		// Validation
 		var target;
 		if( pattern === null ) return this;
@@ -28,7 +33,7 @@
 			target = $.fn.text;
 		} else {
 			target = $.fn.attr;
-			if( attr !== undefined ) attr = [attr];	
+			if( attr !== undefined ) attr = [ attr ];	
 		}
 		
 		// Filter by regex
