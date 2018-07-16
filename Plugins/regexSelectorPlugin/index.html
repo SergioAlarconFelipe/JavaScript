@@ -1,26 +1,43 @@
 <html>
 	<head>
 		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-		<script src="jquery-regex.js"></script>
+		<script src="regexSelector.js"></script>
 		
 		<script>
 		$( document ).ready( function() {
 			// Find in attrs
+			
+			console.log( 'Find in attrs' );
 			console.log( 
 				$( 'div' )
-				.regex( /i\d+/, ['id'] )
-				.regex( /i\d+/, ['class'] ) 
+				.regex( /i\d+/, 'id' )
+			);
+			console.log( 
+				$( 'div' )
+				.regex( /i\d+/, 'id' )
+				.regex( /i\d+/, 'class' ) 
 			);
 			
+			
 			// Find in content
+			console.log( 'Find in content' );
 			console.log(
-				$( 'div' ).regex( /ex/ )
+				$( 'div' )
+				.regex( /ex/ )
 			);
 			console.log(
-				$( 'div' ).regex( /ex/, ['content'] )
+				$( 'div' )
+				.regex( /ex/, 'content' )
 			);
 			
 			// Don't filter
+			
+			console.log( 'Don\'t filter' );
+			console.log(
+				$( 'div' )
+				.regex( )
+			);
+			
 		} );
 			
 		</script>
