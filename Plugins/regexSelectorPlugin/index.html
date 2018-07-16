@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+		<script src="jquery-regex.js"></script>
+		
+		<script>
+		$( document ).ready( function() {
+			// Find in attrs
+			console.log( 
+				$( 'div' )
+				.regex( /i\d+/, ['id'] )
+				.regex( /i\d+/, ['class'] ) 
+			);
+			
+			// Find in content
+			console.log(
+				$( 'div' ).regex( /ex/ )
+			);
+			console.log(
+				$( 'div' ).regex( /ex/, ['content'] )
+			);
+			
+			// Don't filter
+		} );
+			
+		</script>
+	</head>
+	<body>
+		<div id="i1" class="i1"></div>
+		<div id="n1"></div>
+		
+		<div id="i2">text</div>
+		<div id="n2"></div>
+		
+		<div id="i3"></div>
+		<div id="n3"></div>
+	</body>
+</html>
