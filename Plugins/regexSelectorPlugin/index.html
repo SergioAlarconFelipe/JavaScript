@@ -5,7 +5,7 @@
 		
 		<script>
 		$( document ).ready( function() {
-			// Find in attrs			
+			// Find in attrs
 			console.log( 'Find in attrs' );
 			console.log( 
 				$( 'div' )
@@ -14,25 +14,23 @@
 			console.log( 
 				$( 'div' )
 				.regex( /i\d+/, 'id' )
-				.regex( /i\d+/, 'class' ) 
+				.regex( /i\d+/, 'class' )
 			);
-			
 			
 			// Find in content
 			console.log( 'Find in content' );
-			console.log(
+			console.log( 
 				$( 'div' )
 				.regex( /ex/ )
 			);
-			console.log(
+			console.log( 
 				$( 'div' )
 				.regex( /ex/, 'content' )
 			);
 			
 			// Don't filter
-			
 			console.log( 'Don\'t filter' );
-			console.log(
+			console.log( 
 				$( 'div' )
 				.regex( )
 			);	
@@ -40,13 +38,13 @@
 		</script>
 	</head>
 	<body>
-		<div id="i1" class="i1"></div>
-		<div id="n1"></div>
+		<div id="i1" class="i1">i1</div>
+		<div id="n1">n1</div>
 		
-		<div id="i2">text</div>
-		<div id="n2"></div>
+		<div id="i2">i2 text</div>
+		<div id="n2">n2</div>
 		
-		<div id="i3"></div>
-		<div id="n3"></div>
+		<div id="i3">i3</div>
+		<div id="n3">n3</div>
 	</body>
 </html>
