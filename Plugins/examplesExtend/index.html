@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+		<script src="exampleExtend.js"></script>
+		
+		<script>
+		$( document ).ready( function() {
+			console.log( $( 'div[class*=icon]' ) ); 
+			console.log( $( 'div:icon' ) ); 
+		} );
+		</script>
+	</head>
+	<body>
+		<div class="icon">icon</div>
+		<div class="no">no</div>
+		<div class="other_icon">other_icon</div>
+	</body>
+</html>
