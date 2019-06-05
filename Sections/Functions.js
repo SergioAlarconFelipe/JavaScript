@@ -240,10 +240,7 @@ Object.prototype.getRandomValue = function() {
 }
 
 Object.prototype.equals = function( value ) {
-	if( JSON.stringify( this ) === JSON.stringify( value ) ) {
-		return true;
-	}
-	return false;
+	return JSON.stringify( this ) === JSON.stringify( value );
 }
 
 Object.prototype.getKeyByValue = function( value ) {
