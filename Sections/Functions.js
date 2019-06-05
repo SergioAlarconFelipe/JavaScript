@@ -221,3 +221,57 @@ String.prototype.decompress = function () {
 	}
 	return result;
 };
+
+// Funciones para trabajar aleatoriamente con listados
+Array.prototype.getRandomKey = function() {
+	return Math.floor( Math.random() * Object.values( this ).length );
+}
+
+Array.prototype.getRandomValue = function() {
+	return this[ this.getRandomKey() ];
+}
+
+Object.prototype.getRandomKey = function() {
+	return Object.keys( this ).getRandomValue();
+}
+
+Object.prototype.getRandomValue = function() {
+	return this[ this.getRandomKey() ];
+}
+
+Object.prototype.equals = function( value ) {
+	if( JSON.stringify( this ) === JSON.stringify( value ) ) {
+		return true;
+	}
+	return false;
+}
+
+Object.prototype.getKeyByValue = function( value ) {
+	var s = -1;
+	Object.values( c ).forEach( function( e, i ) {
+		if( e.equals( value ) ) {
+			s = i;
+		}
+	} )
+
+	if( s == -1 ) {
+		return null;
+	} else {
+		return Object.keys( this )[ s ];
+	}
+}
+
+var a = [ 15, 13, 18 ];
+a.getRandomKey();								// Return 0, 1 or 2
+a.getRandomValue();								// Return 15, 13 or 13
+
+var b = { a21: 25, a34: 33, a42: 48 };
+b.getRandomKey();								// Return "a21", "a34" or "a42"
+b.getRandomValue();								// Return 25, 33 or 48
+b.getKeyByValue( 33 );								// Return "a34"
+
+
+var c = { a21: [ 25, "hello" ], a34: { a341: 33, a342: "world" }, a42: 48 };
+c.getRandomKey();								// Return "a21", "a34" or "a42"
+c.getRandomValue();								// Return [ 25, "hello" ], { a341: 33, a342: "world" } or 48
+c.getKeyByValue( { a341: 33, a342: "world" } );					// Return "a34"
