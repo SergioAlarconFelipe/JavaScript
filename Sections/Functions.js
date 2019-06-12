@@ -222,7 +222,7 @@ String.prototype.decompress = function () {
 	return result;
 };
 
-// Funciones para trabajar aleatoriamente con listados
+// Funciones para trabajar aleatoriamente con listados (objetos y arrays)
 Array.prototype.getRandomKey = function() {
 	return Math.floor( Math.random() * Object.values( this ).length );
 }
@@ -272,3 +272,21 @@ var c = { a21: [ 25, "hello" ], a34: { a341: 33, a342: "world" }, a42: 48 };
 c.getRandomKey();								// Return "a21", "a34" or "a42"
 c.getRandomValue();								// Return [ 25, "hello" ], { a341: 33, a342: "world" } or 48
 c.getKeyByValue( { a341: 33, a342: "world" } );					// Return "a34"
+
+// Funcion para saber si un elemento se esta mostrando en la pantalla o esta posicionado fuera
+// 	Return: 0 = Elemento no visible actualmente (necesario scroll para verlo)
+//		1 = Elemento visible completamente
+//		2 = Elemento visible parcialmente
+function isElementDisplaying( element ) {
+	var bounding = element.getBoundingClientRect();
+	var salida = 0;
+	if ( bounding.top >= 0 && bounding.left >= 0 && bounding.right <= ( window.innerWidth || document.documentElement.clientWidth ) && bounding.bottom <= ( window.innerHeight || document.documentElement.clientHeight ) ) {
+		salida = 1;
+	} else if ( bounding.top <= ( window.innerHeight || document.documentElement.clientHeight ) && bounding.left <= ( window.innerWidth || document.documentElement.clientWidth ) && bounding.right >= 0 && bounding.bottom >= 0 ) {
+		salida = 2;
+	}
+	
+	return salida;
+}
+
+isElementDisplaying( document.getElementById( 'commit-summary-input' ) );
