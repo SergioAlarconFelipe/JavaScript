@@ -22,6 +22,7 @@ function insertExternalScript( id, src ) {
         fjs.parentNode.insertBefore( js, fjs );
     } ( document, 'script', id, src ) );
 }
+//insertExternalScript( 'jquery', 'https://code.jquery.com/jquery-3.2.1.min.js' );
 
 /**
 * Load a url with POST method
