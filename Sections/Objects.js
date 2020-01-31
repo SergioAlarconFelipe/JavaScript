@@ -115,3 +115,82 @@ Object.assign( {}, array );
 // ==========================================================================
 // === Objetos con propiedades y metodos privados - FIN =====================
 // ==========================================================================
+
+// ==========================================================================
+// === Encapsulacion de objetos - INICIO ====================================
+// ==========================================================================
+( function( name, definition ) {
+	if( window === this ) {
+		this[ name ] = definition();
+	} else {
+		throw new Error( 'Error on initializing' );
+	}
+} ) ( 'sdz', function() {
+	//// Constructor  - Init
+	var obj = {};
+	//// Constructor  - End
+	
+	//// Public Attributes - Init
+	// 		These attributes we will be able to access using the methods or direct way.
+	obj.self = null;
+	obj.attr_public = 'public attribute';
+	//// Public Attributes - End
+	
+	//// Private Attributes - Init
+	// 		These attributes we will only be able to access using the methods but never in direct.
+	var att_private = 'private attribute';
+	//// Private Attributes - End
+		
+	//// Public Methods - Init
+	// 		To be able to directly access these methods.
+	obj.config = function( options ) {
+		// Validation of configuration arguments - Init
+		if( options === undefined || options === null || typeof( options ) !== 'object' ) {
+			return undefined;
+		}
+		if( options.attr_public !== undefined ) {
+			this.attr_public = options.attr_public;
+		}
+		// Validation of configuration arguments - End
+	}
+	
+	obj.getSelf = function() {
+		return this;
+	}
+	
+	obj.getAttPublic = function() {
+		return this.attr_public;
+	}
+	obj.setAttPublic = function( value ) {
+		this.attr_public = value;
+	}
+	
+	obj.getAttPrivate = function() {
+		return att_private;
+	}
+	obj.setAttPrivate = function( value ) {
+		att_private = value;
+	}
+	
+	obj.callMethodPublic = function() {
+		console.log( this.getAttPublic() );
+	}
+	obj.callMethodPrivate = function( value ) {
+		console.log( methodPrivate.call( this, value ) );
+	}
+	//// Public Methods - End
+	
+	//// Private Methods - Init
+	// 		These methods, we will not be able to directly access, they can only be calling from other methods.
+	var methodPrivate = function( s ) {
+		return s.toUpperCase();
+	}
+	//// Private Methods - End
+	
+	//obj.config();
+	obj.self = obj;
+	return obj;
+} )
+// ==========================================================================
+// === Encapsulacion de objetos - FIN =======================================
+// ==========================================================================
