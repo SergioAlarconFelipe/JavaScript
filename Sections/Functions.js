@@ -297,6 +297,7 @@ isElementDisplaying( document.getElementById( 'commit-summary-input' ) );
  *  
  *  https://www.w3resource.com/javascript-exercises/javascript-math-exercise-23.php
  */
+/*
 function create_UUID() {
     var dt = new Date().getTime();
     var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace( /[xy]/g, function(c) {
@@ -306,3 +307,61 @@ function create_UUID() {
     } );
     return uuid;
 }
+*/
+function create_UUID( prop ) {
+	if( prop === undefined ) {
+		prop = {};
+	}
+	if( prop.separator === undefined ) {
+		prop.separator = '|';
+	}
+	if( prop.pattern === undefined ) {
+		prop.pattern = 'dth' + prop.separator + 'hhhhhh';
+	}
+	
+	prop.pattern = prop.pattern.replace( /(dtb|dtd|dth|b|d|h)/gm, function( c ) {
+		var value = 0;
+		switch( c ) {
+			case 'dtb':
+				value = new Date().getTime().toString( 2 );
+				break;
+			case 'dtd':
+				value = new Date().getTime().toString( 10 );
+				break;
+			case 'dth':
+				value = new Date().getTime().toString( 16 );
+				break;
+			case 'b':
+				value = Math.floor( Math.random() * 2 ).toString( 2 );
+				break;
+			case 'd':
+				value = Math.floor( Math.random() * 10 ).toString( 10 );
+				break;
+			case 'h':
+				value = Math.floor( Math.random() * 16 ).toString( 16 );
+				break;
+		}
+		return value;
+	} )
+	
+	if( prop.prefix !== undefined ) {
+		prop.pattern = prop.prefix + prop.separator + prop.pattern;
+	}
+	if( prop.subfix !== undefined ) {
+		prop.pattern = prop.pattern + prop.separator + prop.subfix;
+	}
+	
+	return prop.pattern;
+}
+
+var separator = '|';
+var opts = {
+    //prefix: 'id_pre',
+    subfix: 'id_sub',
+    separator: separator,
+    pattern: 'dth' + separator + 'hhhhhh',
+};
+console.log( create_UUID( opts ) );
+//	"170c684f840|3995fc|id_sub"
+//	"170c6851780|3c8fff|id_sub"
+//	"170c6855600|4cf6e8|id_sub"
