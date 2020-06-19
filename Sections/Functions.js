@@ -366,7 +366,9 @@ console.log( create_UUID( opts ) );
 //	"170c6851780|3c8fff|id_sub"
 //	"170c6855600|4cf6e8|id_sub"
 
-// Funcion lanzar eventos swipe en desktop y movil
+/**
+Funcion lanzar eventos swipe en desktop y movil
+*/
 ( function( element ) {
     element.addEventListener('touchstart', start, false);
     element.addEventListener('touchmove', move, false); 
