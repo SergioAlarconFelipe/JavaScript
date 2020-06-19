@@ -115,7 +115,7 @@ obj[listAllProperties (obj)[2]];		// return	true
 
 Use example:
 ```javascript
-formatCeros (2, 4);                     // return 	"0002"
+formatZeros (2, 4);                     // return 	"0002"
 
 uppercaseFirstLetter ("hello word!");   // return 	"Hello word!"
 ```
